@@ -12,4 +12,9 @@ public class Player {
 		this.nickName = nickName;
 	}
 
+	public Player(String nickName) {
+		super();
+		this.nickName = nickName;
+	}
+
 }

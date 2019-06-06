@@ -38,13 +38,16 @@ public class MagaluApplicationTests {
 	public void gerandoEntradas() {
 		final List<GameLog> splitGames = Divisor.dividir(todasLinhas);
 		Assert.assertEquals(2, splitGames.size());
-	}
-	
-	@Test
-	public void gerandoEntradasComNomes() {
-		final List<GameLog> splitGames = Divisor.dividir(todasLinhas);
-		Assert.assertEquals("jogo-1", splitGames.get(0).getName());
-		Assert.assertEquals("jogo-2", splitGames.get(1).getName());
+		
+		Assert.assertEquals("game-1", splitGames.get(0).getName());
+		Assert.assertEquals("game-2", splitGames.get(1).getName());
+		
+		Assert.assertEquals(2, splitGames.get(0).getLog().size());
+		Assert.assertEquals(1, splitGames.get(1).getLog().size());
+
+		Assert.assertEquals(LINHA_1, splitGames.get(0).getLog().get(0));
+		Assert.assertEquals(LINHA_2, splitGames.get(0).getLog().get(1));
+		Assert.assertEquals(LINHA_3, splitGames.get(1).getLog().get(0));
 	}
 
 }
