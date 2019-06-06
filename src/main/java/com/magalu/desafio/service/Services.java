@@ -26,13 +26,18 @@ public class Services {
 	
 	private static final String ESPACO = "    ";
 	
+	/*
+	 * Chama para impressão do log do game no console
+	 */
 	public void games(final List<Game> games) {
 		final Services servicos = new Services();
 		servicos.overall(games);
 		servicos.game(games);
 	}
 
-	//Leitura do arquivo
+	/*
+	 * Leitura do arquivo
+	 */
 	public static List<String> lerArquivo(final String path) {
 		return getLinhas(path);
 	}
@@ -48,7 +53,9 @@ public class Services {
 	}
 	
 	
-	//Impressao
+	/*
+	 * Inicio da impressao no console
+	 */
 	@SuppressWarnings("unused")
 	private void nomeGame(final Game game) {
 		System.out.println(game.getName() + ": {");
@@ -172,6 +179,9 @@ public class Services {
 		System.out.println(ESPACO + "players: [" + players + "]");
 	}
 	
+	/*
+	 * Organiza a sequencia da impressao
+	 */
 	@SuppressWarnings("unused")
 	private void game(final List<Game> games) {
 		for (final Game game : games) {
