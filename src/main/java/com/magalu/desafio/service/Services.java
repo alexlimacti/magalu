@@ -25,6 +25,12 @@ import com.magalu.desafio.enumerator.Death;
 public class Services {
 	
 	private static final String ESPACO = "    ";
+	
+	public void games(final List<Game> games) {
+		final Services servicos = new Services();
+		servicos.overall(games);
+		servicos.game(games);
+	}
 
 	//Leitura do arquivo
 	public static List<String> lerArquivo(final String path) {
@@ -177,7 +183,5 @@ public class Services {
 			System.out.println("}");
 		}
 	}
-	
-	//Parser
 	
 }
